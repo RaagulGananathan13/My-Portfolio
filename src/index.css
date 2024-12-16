@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Inter", sans-serif;
+}
+
+/* Navbar container */
+.navbar {
+ 
+  color: white;
+  width: 100%; /* Ensure the navbar spans the full width */
+ 
+}
+
+/* Navigation buttons */
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-button {
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-button:hover {
+  color: #00d1b2; /* Hover color for professional touch */
+  transform: scale(1.1); /* Slight pop effect */
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 16px;
+  color: #fff;
+}
+
+.social-icons .fa {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons .fa:hover {
+  color: #00d1b2; /* Hover color */
+  transform: scale(1.2); /* Slight pop effect */
+}
+
+/* Make navbar items responsive */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide nav links on small screens */
+  }
+}
+
+/* In your CSS file (e.g., App.css or index.css) */
+html {
+  scroll-behavior: smooth;
+}
+
