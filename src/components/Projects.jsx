@@ -158,7 +158,7 @@ const Projects = () => {
                                                     <img
                                                     src={project.images?.[0]}
                                                     alt={project.title}
-                                                    className="h-56 w-full rounded-xl object-cover transition-transform duration-300 hover:scale-[1.02] lg:h-72"
+                                                    className="h-56 w-full rounded-xl bg-neutral-950 p-2 object-contain transition-transform duration-300 hover:scale-[1.02] lg:h-72"
                                                     />
                                                     <span className="glass-pill absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-semibold text-white">
                                                         Gallery • {project.images?.length || 1}
