@@ -1,6 +1,6 @@
 import { RiReactjsLine } from "react-icons/ri";
-import { SiAngular, SiCss3, SiExpress, SiFigma, SiGithub, SiHtml5, SiJavascript, SiMongodb, SiMysql, SiPhp, SiPostman } from "react-icons/si";
-import { FaNodeJs } from "react-icons/fa";
+import { SiAngular, SiAmazonec2, SiAmazons3, SiCss3, SiDocker, SiExpress, SiFigma, SiGithub, SiHtml5, SiJavascript, SiMongodb, SiMysql, SiPhp, SiPostman, SiSap, SiSpringboot, SiTailwindcss } from "react-icons/si";
+import { FaIndustry, FaNodeJs } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { FaJava } from "react-icons/fa6";
 import { DiAndroid, DiVisualstudio } from "react-icons/di";
@@ -28,7 +28,7 @@ const Technologies = () => {
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: -100 }}
       transition={{ duration: 1.5 }}
-       className="my-20 text-center text-4xl font-light tracking-tighter font-semibold">
+        className="my-20 text-center text-4xl tracking-tighter font-semibold">
         Technologies
        </motion.h2>
       <motion.div 
@@ -162,6 +162,62 @@ const Technologies = () => {
         animate='animate'
         className="rounded-2xl border-4 border-neutral-800 p-4">
             <SiAngular className="text-6xl text-red-600" />
+        </motion.div>
+
+        <motion.div 
+        variants={iconVariants(2.2)}
+        initial='initial'
+        animate='animate'
+        className="rounded-2xl border-4 border-neutral-800 p-4">
+            <SiAmazonec2 className="text-6xl text-orange-400" />
+        </motion.div>
+
+        <motion.div 
+        variants={iconVariants(2.7)}
+        initial='initial'
+        animate='animate'
+        className="rounded-2xl border-4 border-neutral-800 p-4">
+            <SiAmazons3 className="text-6xl text-orange-500" />
+        </motion.div>
+
+        <motion.div 
+        variants={iconVariants(3.4)}
+        initial='initial'
+        animate='animate'
+        className="rounded-2xl border-4 border-neutral-800 p-4">
+            <SiDocker className="text-6xl text-sky-500" />
+        </motion.div>
+
+        <motion.div 
+        variants={iconVariants(4.2)}
+        initial='initial'
+        animate='animate'
+        className="rounded-2xl border-4 border-neutral-800 p-4">
+            <SiSpringboot className="text-6xl text-green-500" />
+        </motion.div>
+
+        <motion.div 
+        variants={iconVariants(2.9)}
+        initial='initial'
+        animate='animate'
+        className="rounded-2xl border-4 border-neutral-800 p-4">
+            <SiTailwindcss className="text-6xl text-cyan-400" />
+        </motion.div>
+
+        <motion.div 
+        variants={iconVariants(3.8)}
+        initial='initial'
+        animate='animate'
+        className="rounded-2xl border-4 border-neutral-800 p-4">
+            <SiSap className="text-6xl text-blue-400" />
+        </motion.div>
+
+        <motion.div 
+        variants={iconVariants(4.5)}
+        initial='initial'
+        animate='animate'
+        className="rounded-2xl border-4 border-neutral-800 p-4">
+            <FaIndustry className="text-6xl text-amber-400" />
         </motion.div>
 
 
