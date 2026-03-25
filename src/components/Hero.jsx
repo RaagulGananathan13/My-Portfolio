@@ -13,7 +13,7 @@ const container = (delay) => ({
 
 const Hero = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:mb-35">
+    <section className="border-b border-neutral-900 pb-4 lg:mb-35">
       <div className="flex flex-wrap">
         {/* Text Content */}
         <div className="w-full lg:w-1/2">
@@ -22,7 +22,7 @@ const Hero = () => {
               variants={container(0)}
               initial="hidden"
               animate="visible"
-              className="pb-16 text-6xl font-thin tracking-tight lg:mt-16
+              className="pb-10 text-5xl font-semibold tracking-tight lg:mt-10
               lg:text-8xl"
             >
               Raagul Gananathan
@@ -60,7 +60,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

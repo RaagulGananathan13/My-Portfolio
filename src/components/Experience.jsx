@@ -20,7 +20,7 @@ const Experience = () => {
               {EXPERIENCES.map((experience, index) => (
                   <div 
                   key={index}
-                                    className="mb-12 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8"
+                                    className="glass-card mb-8 rounded-2xl p-6 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8"
                   >
                      <motion.div 
                      whileInView={{ opacity: 1, x: 0 }}
@@ -45,7 +45,7 @@ const Experience = () => {
                                                     {experience.technologies.map((tech, index) => (
                                                         <span
                                                             key={index}
-                                                            className="rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800"
+                                                            className="glass-pill rounded px-2 py-1 text-sm font-medium text-purple-200"
                                                         >
                                                             {tech}
                                                         </span>

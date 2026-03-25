@@ -40,7 +40,7 @@ const Contact = () => {
           href={`https://wa.me/${normalizedPhone}?text=${whatsappMessage}`}
           target="_blank"
           rel="noreferrer"
-          className="rounded-2xl border border-emerald-700/40 bg-emerald-900/10 p-6 transition-all hover:-translate-y-1 hover:border-emerald-500/60"
+          className="glass-card rounded-2xl border border-emerald-700/40 bg-emerald-900/10 p-6 transition-all hover:-translate-y-1 hover:border-emerald-500/60"
         >
           <p className="text-sm uppercase tracking-[0.2em] text-emerald-400">WhatsApp</p>
           <h3 className="mt-2 text-xl font-semibold text-white">Quick Message</h3>
@@ -53,7 +53,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
           href={`mailto:${CONTACT.email}`}
-          className="rounded-2xl border border-blue-700/40 bg-blue-900/10 p-6 transition-all hover:-translate-y-1 hover:border-blue-500/60"
+          className="glass-card rounded-2xl border border-blue-700/40 bg-blue-900/10 p-6 transition-all hover:-translate-y-1 hover:border-blue-500/60"
         >
           <p className="text-sm uppercase tracking-[0.2em] text-blue-400">Email</p>
           <h3 className="mt-2 text-xl font-semibold text-white">Send an Email</h3>
@@ -68,7 +68,7 @@ const Contact = () => {
           href={googleCalendarLink}
           target="_blank"
           rel="noreferrer"
-          className="rounded-2xl border border-violet-700/40 bg-violet-900/10 p-6 transition-all hover:-translate-y-1 hover:border-violet-500/60"
+          className="glass-card rounded-2xl border border-violet-700/40 bg-violet-900/10 p-6 transition-all hover:-translate-y-1 hover:border-violet-500/60"
         >
           <p className="text-sm uppercase tracking-[0.2em] text-violet-400">Meeting</p>
           <h3 className="mt-2 text-xl font-semibold text-white">Schedule Discussion</h3>
