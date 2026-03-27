@@ -1,5 +1,6 @@
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/raagulProfilePic.png";
+import resumePdf from "../assets/Raagul Gananathan - Resume.pdf";
 import { motion } from "framer-motion";
 
 const container = (delay) => ({
@@ -43,6 +44,16 @@ const Hero = () => {
               className="my-2 max-w-xl py-6 font-light tracking-tighter">
               {HERO_CONTENT}
             </motion.p>
+            <motion.a
+              variants={container(1.2)}
+              initial="hidden"
+              animate="visible"
+              href={resumePdf}
+              download="Raagul_Gananathan_CV.pdf"
+              className="mt-2 inline-flex items-center rounded-lg border border-cyan-400/70 px-6 py-3 text-sm font-medium tracking-wide text-cyan-300 transition hover:bg-cyan-400/10 hover:text-cyan-200"
+            >
+              Download CV
+            </motion.a>
           </div>
         </div>
 
