@@ -37,28 +37,30 @@ const Hero = () => {
             >
               Full Stack Developer
             </motion.span>
-            <motion.p 
-              variants={container(1)}
-              initial="hidden"
-              animate="visible"
-              className="my-2 max-w-xl py-6 font-light tracking-tighter">
-              {HERO_CONTENT}
-            </motion.p>
-            <motion.a
-              variants={container(1.2)}
-              initial="hidden"
-              animate="visible"
-              href={resumePdf}
-              download="Raagul_Gananathan_CV.pdf"
-              className="mt-2 inline-flex items-center rounded-lg border border-cyan-400/70 px-6 py-3 text-sm font-medium tracking-wide text-cyan-300 transition hover:bg-cyan-400/10 hover:text-cyan-200"
-            >
-              Download CV
-            </motion.a>
+            <div className="w-full max-w-xl">
+              <motion.p 
+                variants={container(1)}
+                initial="hidden"
+                animate="visible"
+                className="my-2 py-6 font-light tracking-tighter">
+                {HERO_CONTENT}
+              </motion.p>
+              <motion.a
+                variants={container(1.2)}
+                initial="hidden"
+                animate="visible"
+                href={resumePdf}
+                download="Raagul_Gananathan_CV.pdf"
+                className="mt-2 inline-flex items-center rounded-lg border border-cyan-400/70 px-6 py-3 text-sm font-medium tracking-wide text-cyan-300 transition hover:bg-cyan-400/10 hover:text-cyan-200"
+              >
+                Download CV
+              </motion.a>
+            </div>
           </div>
         </div>
 
         {/* Profile Picture */}
-        <div className="w-full lg:w-1/2 lg:p-8">
+        <div className="mt-8 w-full lg:mt-0 lg:w-1/2 lg:p-8">
           <div className="flex justify-center lg:justify-end">
             <motion.img
               initial={{ x: 100, opacity:0 }}
@@ -66,7 +68,7 @@ const Hero = () => {
               transition={{duration: 1, delay: 1.2}}
               src={profilePic}
               alt="Raagul Profile Picture"
-              className="h-auto max-h-full w-full max-w-sm lg:max-h-[100%] lg:max-w-[50%] object-contain rounded-2xl"
+              className="glass-card h-auto max-h-full w-full max-w-sm rounded-2xl p-2 object-contain lg:max-h-[100%] lg:max-w-[50%]"
             />
           </div>
         </div>

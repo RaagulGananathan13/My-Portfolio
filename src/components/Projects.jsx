@@ -1,6 +1,7 @@
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const ImageGalleryModal = ({ project, currentIndex, onClose, onPrev, onNext, onSelect }) => {
     if (!project) return null;
@@ -12,20 +13,25 @@ const ImageGalleryModal = ({ project, currentIndex, onClose, onPrev, onNext, onS
         <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
             onClick={onClose}
+            role="presentation"
         >
             <div
                 className="glass-card relative w-full max-w-4xl rounded-2xl border border-neutral-700 bg-neutral-900/80 p-4"
                 onClick={(e) => e.stopPropagation()}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="project-gallery-title"
             >
                 <button
                     type="button"
                     className="absolute right-3 top-3 rounded bg-neutral-800 px-3 py-1 text-sm text-white hover:bg-neutral-700"
                     onClick={onClose}
+                    aria-label="Close project image gallery"
                 >
                     Close
                 </button>
 
-                <h3 className="mb-4 pr-20 text-lg font-semibold text-white">{project.title}</h3>
+                <h3 id="project-gallery-title" className="mb-4 pr-20 text-lg font-semibold text-white">{project.title}</h3>
 
                 <div className="relative flex items-center justify-center">
                     {images.length > 1 && (
@@ -33,6 +39,7 @@ const ImageGalleryModal = ({ project, currentIndex, onClose, onPrev, onNext, onS
                             type="button"
                             onClick={onPrev}
                             className="absolute left-2 rounded bg-neutral-800 px-3 py-2 text-white hover:bg-neutral-700"
+                            aria-label="View previous project image"
                         >
                             Prev
                         </button>
@@ -49,6 +56,7 @@ const ImageGalleryModal = ({ project, currentIndex, onClose, onPrev, onNext, onS
                             type="button"
                             onClick={onNext}
                             className="absolute right-2 rounded bg-neutral-800 px-3 py-2 text-white hover:bg-neutral-700"
+                            aria-label="View next project image"
                         >
                             Next
                         </button>
@@ -65,6 +73,7 @@ const ImageGalleryModal = ({ project, currentIndex, onClose, onPrev, onNext, onS
                                 className={`overflow-hidden rounded border ${
                                     idx === currentIndex ? "border-purple-500" : "border-neutral-700"
                                 }`}
+                                aria-label={`View image ${idx + 1} of ${images.length}`}
                             >
                                 <img src={img} alt={`${project.title} thumb ${idx + 1}`} className="h-12 w-16 object-cover" />
                             </button>
@@ -74,6 +83,22 @@ const ImageGalleryModal = ({ project, currentIndex, onClose, onPrev, onNext, onS
             </div>
         </div>
     );
+};
+
+ImageGalleryModal.propTypes = {
+    project: PropTypes.shape({
+        title: PropTypes.string,
+        images: PropTypes.arrayOf(PropTypes.string),
+    }),
+    currentIndex: PropTypes.number.isRequired,
+    onClose: PropTypes.func.isRequired,
+    onPrev: PropTypes.func.isRequired,
+    onNext: PropTypes.func.isRequired,
+    onSelect: PropTypes.func.isRequired,
+};
+
+ImageGalleryModal.defaultProps = {
+    project: null,
 };
 
 const Projects = () => {
@@ -183,6 +208,29 @@ const Projects = () => {
                                 {tech}
                             </span>
                         ))}
+                    </div>
+
+                    <div className="mt-4 flex flex-wrap gap-3">
+                        {project.link && project.link !== "#" && (
+                            <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="rounded-md border border-cyan-400/60 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-cyan-200 transition hover:bg-cyan-400/10"
+                            >
+                                Live Demo
+                            </a>
+                        )}
+                        {project.github && project.github !== "#" && (
+                            <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="rounded-md border border-purple-400/60 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-purple-200 transition hover:bg-purple-400/10"
+                            >
+                                View Code
+                            </a>
+                        )}
                     </div>
                     </motion.div>
                         </>
